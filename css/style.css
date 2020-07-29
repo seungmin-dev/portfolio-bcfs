@@ -1,0 +1,75 @@
+@charset="utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+h2, h4, a, p, span{font-family: 'Montserrat', sans-serif; font-weight: 400;}
+
+
+.title{font-size: 2rem; line-height: 3rem; font-weight: 700;}
+.sub-title{font-size: 1.4rem; line-height: 2.4rem;}
+.white{color: #fff;}
+.navy{color: #244482;}
+.btn{display: block; border-radius: 10px; height: 50px; text-align: center; padding: 0 20px; line-height: 50px; margin: 10px 0; font-size: 1rem; font-weight: 500; letter-spacing: 2px;}
+.whitebtn{background-color: #fff;}
+.navybtn{background-color: #244482; color: #fff;}
+
+.container{width: 100%; height: 100%; position: relative;}
+section{width: 100%; height: 100%;}
+.page-inner{width: 96%; max-width: 1300px; height: 100%; margin: 0 auto; position: relative;}
+
+header{width: 100%; height: 80px; position: fixed; top: 0; left: 0; z-index: 100;}
+header .header-inner{width: 96%; max-width: 1300px; height: 100%; margin: 0 auto;}
+header .logo{display: block; width: 100px; height: 100%; float: left; background-image: url('../src/logo.svg'); background-position: center center; background-size: 100% auto; background-repeat: no-repeat;}
+header .gnb{display: block; width: calc(100% - 380px); height: 100%; float: left;}
+header .sign{display: block; width: 200px; height: 100%; float: right;}
+header .gnb li{display: block; float: left;}
+header .gnb li a{display: block; line-height: 80px; font-size: 1rem; padding: 0 20px; text-align: center; color: #fff; }
+header .sign li{display: block; float: left;}
+header .sign li a{display: block; line-height: 80px; font-size: 1rem; padding: 0 10px; text-align: center; color: #fff; }
+
+header .search{display: block; float: left; line-height: 80px; color: #fff; width: 80px; height: 80px;}
+header .search i{display: block; text-align: center; line-height: 80px; color: #fff; width: 100%; height: 100%;}
+header .login, .signin{display: block; width: 80px; height: 80px; line-height: 80px; text-align: center; font-size: 1rem; text-align: center;}
+
+
+
+
+#page1{background-image: url('../src/page1bg.jpg'); background-size: 100% auto; background-position: center top;}
+.text-box{width: 50%; /*height: 300px;*/ padding: 25px; position: absolute; top: 25%;}
+
+
+.text-box .btn {background-color: #fff; overflow: hidden; display:inline-block; color:transparent; font-size: 1rem;}
+.text-box .btn span {background: url('../src/page1bg.jpg') -400px -400px repeat; -webkit-text-fill-color: transparent; -webkit-background-clip: text; display:block; font-weight: 600;}
+
+
+.bottom-content{width: 100%; height: 80px; position: absolute; bottom: 0; left: 0;}
+.social{display: block; width: 10%; height: 100%; float: left;}
+.social li{display: block; width: 33%; height: 100%; margin-right: 0.5%;  float: left; }
+.social li:last-child{margin-right: 0;}
+.social li a{display: block; width: 100%; height: 100%; background-size: 60% auto; background-position: center center; background-repeat: no-repeat; }
+.slide-index{width: 40%; height: 100%; float: right;}
+.slide-index span{display: block; font-size: 1rem; width: 50px; text-align: center; color: #fff; line-height: 80px; float: left;}
+.slide-index .line{width: calc(100% - 240px); margin: 40px 20px 0; height: 1px; background-color: #fff; float: left; display: none;}
+/* .line width는 calc 100%에서 픽셀값 빼면서 줄어들어야됨*/
+.slide-index .line.active{display: block;}
+
+
+#page2{background-image: url('../src/page2bg.svg'); background-size: 100% auto;}
+#page2 .text-box{top: 12%; }
+.searchbox{width: 30%; height: 50px; position: absolute; top: 17%; right: 0;}
+.searchbox input{display: block; width: 75%; height: 100%; float: left; border: none; border-radius: 10px 0 0 10px; text-indent: 20px; line-height: 50px; color: #888; }
+.searchbox input.active{color: #666;}
+.searchbox .navybtn{width: 25%; height: 100%; float: left; border-radius: 0 10px 10px 0; cursor: pointer;}
+.searchbox .navybtn i{display: block; width: 100%; line-height: 50px; text-align: center;}
+
+.package-box{width: 85%; height: 60%; position: absolute; top: 30%; left: 7.5%;}
+.package-box ul{display: block; width: 100%; height: 100%;}
+.package-box ul li{display: block; width: 33%; height: 100%; margin-right: 0.5%; float: left;}
+.package-box ul li:last-child{margin-right: 0;}
+.package-box ul li a{display: block; width: 80%; height: 70%; margin: 10px auto 25px; background-size: auto 100%; background-position: center center; background-repeat: no-repeat;}
+.package-box ul li .package-text{width: 80%; display: block; margin: 0 auto; font-size: 0.85rem;}
+
+
+#page3{background-image: url('../src/page3bg.svg'); background-size: 100% auto;}
+
+
+
