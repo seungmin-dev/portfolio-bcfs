@@ -1,13 +1,36 @@
 @charset="utf-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-h2, h4, a, p, span{font-family: 'Montserrat', sans-serif; font-weight: 400;}
+h2, h4, a, p, span, input{font-family: 'Montserrat', sans-serif; font-weight: 400;}
+
+::-webkit-scrollbar{
+    width: 15px;
+    background-color: #f0fdff;
+}
+::-webkit-scrollbar-track{
+    
+    
+}
+::-webkit-scrollbar-thumb{
+    background-color: #244482;
+    border-radius: 5px;
+} /*잡고 내리는거*/
+::-webkit-scrollbar-button{
+    background-color: #c1e0e5;
+}
+::-webkit-scrollbar-corner{
+    background-color: #f0fdff;
+}
+
 
 
 .title{font-size: 2rem; line-height: 3rem; font-weight: 700;}
-.sub-title{font-size: 1.4rem; line-height: 2.4rem;}
+.sub-title{font-size: 1.4rem; line-height: 2.4rem; padding-bottom: 10px;}
 .white{color: #fff;}
 .navy{color: #244482;}
+.center{text-align: center;}
+.pt60{padding-top: 60px;}
+.pb100{padding-bottom: 100px;}
 .btn{display: block; border-radius: 10px; height: 50px; text-align: center; padding: 0 20px; line-height: 50px; margin: 10px 0; font-size: 1rem; font-weight: 500; letter-spacing: 2px;}
 .whitebtn{background-color: #fff;}
 .navybtn{background-color: #244482; color: #fff;}
@@ -34,11 +57,11 @@ header .login, .signin{display: block; width: 80px; height: 80px; line-height: 8
 
 
 #page1{background-image: url('../src/page1bg.jpg'); background-size: 100% auto; background-position: center top;}
-.text-box{width: 50%; /*height: 300px;*/ padding: 25px; position: absolute; top: 25%;}
+.text-box{width: 50%; /*height: 300px;*/ padding: 25px; position: absolute; top: 28%;}
 
-
-.text-box .btn {background-color: #fff; overflow: hidden; display:inline-block; color:transparent; font-size: 1rem;}
+.text-box .btn {background-color: #fff; overflow: hidden; display:inline-block; color:transparent; font-size: 1.1em; width: 40%;}
 .text-box .btn span {background: url('../src/page1bg.jpg') -400px -400px repeat; -webkit-text-fill-color: transparent; -webkit-background-clip: text; display:block; font-weight: 600;}
+
 
 
 .bottom-content{width: 100%; height: 80px; position: absolute; bottom: 0; left: 0;}
@@ -47,7 +70,7 @@ header .login, .signin{display: block; width: 80px; height: 80px; line-height: 8
 .social li:last-child{margin-right: 0;}
 .social li a{display: block; width: 100%; height: 100%; background-size: 60% auto; background-position: center center; background-repeat: no-repeat; }
 .slide-index{width: 40%; height: 100%; float: right;}
-.slide-index span{display: block; font-size: 1rem; width: 50px; text-align: center; color: #fff; line-height: 80px; float: left;}
+.slide-index span{display: block; font-size: 1rem; width: 50px; text-align: center; color: #fff; line-height: 80px; float: left; font-weight: 700;}
 .slide-index .line{width: calc(100% - 240px); margin: 40px 20px 0; height: 1px; background-color: #fff; float: left; display: none;}
 /* .line width는 calc 100%에서 픽셀값 빼면서 줄어들어야됨*/
 .slide-index .line.active{display: block;}
@@ -61,15 +84,86 @@ header .login, .signin{display: block; width: 80px; height: 80px; line-height: 8
 .searchbox .navybtn{width: 25%; height: 100%; float: left; border-radius: 0 10px 10px 0; cursor: pointer;}
 .searchbox .navybtn i{display: block; width: 100%; line-height: 50px; text-align: center;}
 
-.package-box{width: 85%; height: 60%; position: absolute; top: 30%; left: 7.5%;}
-.package-box ul{display: block; width: 100%; height: 100%;}
-.package-box ul li{display: block; width: 33%; height: 100%; margin-right: 0.5%; float: left;}
-.package-box ul li:last-child{margin-right: 0;}
-.package-box ul li a{display: block; width: 80%; height: 70%; margin: 10px auto 25px; background-size: auto 100%; background-position: center center; background-repeat: no-repeat;}
-.package-box ul li .package-text{width: 80%; display: block; margin: 0 auto; font-size: 0.85rem;}
+.package-box{width: 90%; height: 60%; position: absolute; top: 30%; left: 5%;}
+.package-box .package-wrap{display: block; width: 100%; height: 100%; position: relative;}
+.package-box .package-wrap .package{display: block; width: 32%; height: 100%; margin-right: 2%; float: left; position: absolute; top: 0;}
+.package-box .package-wrap .package:first-child{left: 0;}
+.package-box .package-wrap .package:nth-child(2){left: 34%;}
+.package-box .package-wrap .package:last-child{margin-right: 0; left: 68%;}
+.package-box .package-wrap .package .package-inner{width: 100%; height: 100%; margin: 0 auto;}
+.package-box .package-wrap .package a{display: block; width: 90%; height: 70%; margin: 10px auto 0px; background-size: cover; background-position: center center; background-repeat: no-repeat; border-radius: 10px 10px 0 0;}
 
+.package-box .package-wrap .package .package-text{width: calc(90% - 20px); display: block; margin: 0 auto; font-size: 1rem; line-height: 1.5rem; text-align: center; background-color: #fff; border-radius: 0 0 10px 10px; padding: 25px 10px;}
+/*.package-box .package-wrap .package-back{width: 90%; width: 0; height: 90%; margin: 0 auto; transform: rotateY(180deg); opacity: 0;}
+.package-box .package-wrap .package-back .package-back-text{padding: 5%; text-align: center; font-size: 1rem; line-height: 1.5rem;}*/
+
+.package-box .package-wrap .package:hover{transform: rotateY(360deg); transition: 1s;}
 
 #page3{background-image: url('../src/page3bg.svg'); background-size: 100% auto;}
+.review-box{width: 100%; height: 70%; position: relative;}
+.review-box .btn{width: 5%; height: 70px; position: absolute; left: 0; top: 42.5%;}
+.review-box .right{right: 0;}
+.review-card{width: 84%; height: 80%; margin: 0 auto; border-radius: 10px; box-sizing: border-box; border: 2px solid #fff; margin-top: 20px;}
+.review-image-cover{width: 65%; height: 100%; float: left; overflow: hidden; border-radius: 10px 0 0 10px;}
+.review-comment-cover{width: 35%; height: 100%; float: left; overflow: hidden; border-radius: 0 10px 10px 0; background-color: rgba(255,255,255,0.5);}
+
+.review-image-wrap, .review-comment-wrap{width: 400%; height: 100%;}
+.review-image, .review-comment{width: 25%; height: 100%; float: left;}
+.review-image{background-size: auto 100%; background-position: center center; }
+
+.profile{width: 100%; height: 70px; padding-left: 5%; box-sizing: border-box; border-bottom: 2px solid #fff;}
+.profile-image{width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #fff; border-radius: 50px; margin-top: 10px; float: left; background-size: 100% auto; background-position: center center;}
+.profile-name{line-height: 70px; font-weight: 500; font-size: 1.6rem; text-indent: 15px;}
+.profile .comment{padding: 12px 15px; font-size: 1.2rem; line-height: 2rem;}
+
+
+
+#page4{background-image: url('../src/page4bg_.jpg'); background-position: center center; background-size: 100% auto;}
+.process-wrap{width: 100%; height: 400px; position: absolute; top: 15%;}
+.process-box{width: 25%; height: 100%; float: left; position: relative;}
+.process{padding-top: 85%; font-size: 1.1rem; line-height: 1.8rem; text-align: right;  padding-right: 10px;}
+.process-2{display: none;}
+
+.process-box.active{width: 49%;}
+.process-box.side{width: 17%;}
+
+.process-box:first-child{background-color: #f0fdff;}
+.process-box:nth-child(2){background-color: #c1e0e5;}
+.process-box:nth-child(3){background-color: #98ccd4}
+.process-box:last-child{background-color: #80bec7;}
+
+
+.process-num,svg {width: 100%; height: 300px}
+.st1, .st2 {opacity: 0.6; stroke-dasharray: 20000; stroke-opacity: 1; fill: #fff; }
+.process-box:hover .st1{animation: stroke_offset 8s infinite;}
+.process-box:hover .st2{animation: stroke_offset 8s infinite; }
+
+@keyframes stroke_offset {
+    0% {stroke-dasharray: 600;} 
+    100% {stroke-dasharray: 20000;} 
+
+}
+
+.process-num{position: absolute; top: 0; left: 0;}
+
+
+
+footer{width: 100%; height: 250px; position: absolute; bottom: 0;}
+footer .footer-title-box{width: 100%; height: 60px;}
+footer .title{width: 50%; float: left; line-height: 60px;}
+footer .btn{width: 25%; margin: 0 5%; float: right;}
+
+footer .btn {background-color: #fff; overflow: hidden; display:inline-block; color:transparent; font-size: 1.1em;}
+footer .btn span {background: url('../src/page4bg_.jpg') 400px 400px repeat; -webkit-text-fill-color: transparent; -webkit-background-clip: text; display:block; font-weight: 600;}
+
+
+footer .fnb-wrap{width: 100%; height: 150px; margin-top: 20px;}
+footer .fnb-wrap ul{display: block; width: 25%; height: 100%; float: left;}
+footer .fnb-wrap ul li{display: block; width: 100%; height: 50px;}
+footer .fnb-wrap ul li a{color: #244482; line-height: 50px; display: block; letter-spacing: 2px; font-weight: bold; font-size: 1em;}
+footer .fnb-wrap ul li:hover a{color: #fff; font-style: italic; text-indent: 20px; }
+
+
 
 
 
