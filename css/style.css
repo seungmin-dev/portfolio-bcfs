@@ -1,7 +1,7 @@
 @charset="utf-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-h2, h4, a, p, span, input{font-family: 'Montserrat', sans-serif; font-weight: 400;}
+h2, h4, a, p, span, input, button{font-family: 'Montserrat', sans-serif; font-weight: 400;}
 
 ::-webkit-scrollbar{
     width: 15px;
@@ -31,7 +31,7 @@ h2, h4, a, p, span, input{font-family: 'Montserrat', sans-serif; font-weight: 40
 .center{text-align: center;}
 .pt60{padding-top: 60px;}
 .pb100{padding-bottom: 100px;}
-.btn{display: block; border-radius: 10px; height: 50px; text-align: center; padding: 0 20px; line-height: 50px; margin: 10px 0; font-size: 1rem; font-weight: 500; letter-spacing: 2px;}
+/*.btn{display: block; border-radius: 10px; height: 50px; text-align: center; padding: 0 20px; line-height: 50px; margin: 10px 0; font-size: 1rem; font-weight: 500; letter-spacing: 2px;}*/
 .whitebtn{background-color: #fff;}
 .navybtn{background-color: #244482; color: #fff;}
 
@@ -56,12 +56,32 @@ header .login, .signin{display: block; width: 80px; height: 80px; line-height: 8
 
 
 
-#page1{background-image: url('../src/page1bg.jpg'); background-size: 100% auto; background-position: center top;}
+#page1{position: relative;}
+
+.img-box-wrap{width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -10; overflow: hidden;}
+.img-box{width: 100%; height: 100%; position: relative;}
+.img-box img{display: block; width: 100%; height: auto; position: absolute; top: 0; left: 0; display: none;}
+/*.img-box img:last-child{display: block;}*/
+/*.img-box img:first-child{z-index: -1;}
+.img-box img:nth-child(2){z-index: -2;}
+.img-box img:last-child{z-index: -3;}*/
+
 .text-box{width: 50%; /*height: 300px;*/ padding: 25px; position: absolute; top: 28%;}
 
-.text-box .btn {background-color: #fff; overflow: hidden; display:inline-block; color:transparent; font-size: 1.1em; width: 40%;}
-.text-box .btn span {background: url('../src/page1bg.jpg') -400px -400px repeat; -webkit-text-fill-color: transparent; -webkit-background-clip: text; display:block; font-weight: 600;}
+/*.text-box .btn {background-color: #fff; overflow: hidden; display:inline-block; color:transparent; font-size: 1.1em; width: 40%;}
+.text-box .btn span {background: url('../src/page1bg.jpg') -400px -400px repeat; -webkit-text-fill-color: transparent; -webkit-background-clip: text; display:block; font-weight: 600;}*/
 
+
+/*.btn-wrap{display: flex; flex-direction: row; justify-content: space-between; align-items: center; max-width: 1200px;}*/
+.btn{margin: 10px 0; display: block;}
+button{cursor: pointer; overflow: visible; outline: none; color: #fff; position: relative; letter-spacing: 0.1em; font-weight: 400; height: 60px; padding: 0 30px; text-transform: uppercase; font-size: 1.5em;}
+.btn-wrap .Debris button{color: #fff; overflow: hidden; position: relative; border-radius: 5px; border: 5px solid #fff; background: transparent; /*transition: all 2s ease;*/ box-sizing: border-box;}
+.btn-wrap .Debris button span{position: absolute; content: ''; top: 1.2em; left: 50%; width: 23em; height: 23em; opacity: 0.5; background: #fff; margin-left: -11em; border-radius: 42.5%; transform-origin: 50% 50%; animation: wave 3s infinite; /*transition: all 2s ease;*/ /*top 3s ease*/}
+       
+@keyframes wave{
+    0% {transform: rotate(0);}
+    100% {transform: rotate(90deg);}
+}
 
 
 .bottom-content{width: 100%; height: 80px; position: absolute; bottom: 0; left: 0;}
@@ -71,9 +91,11 @@ header .login, .signin{display: block; width: 80px; height: 80px; line-height: 8
 .social li a{display: block; width: 100%; height: 100%; background-size: 60% auto; background-position: center center; background-repeat: no-repeat; }
 .slide-index{width: 40%; height: 100%; float: right;}
 .slide-index span{display: block; font-size: 1rem; width: 50px; text-align: center; color: #fff; line-height: 80px; float: left; font-weight: 700;}
-.slide-index .line{width: calc(100% - 240px); margin: 40px 20px 0; height: 1px; background-color: #fff; float: left; display: none;}
-/* .line width는 calc 100%에서 픽셀값 빼면서 줄어들어야됨*/
-.slide-index .line.active{display: block;}
+
+.slide-index .line{width: calc(100% - 240px); width: 0; margin: 40px 6px 0; height: 1px; background-color: #fff; float: left;}
+
+.line.active{width: 0%; transition: 1s;}
+.line.inactive{width: calc(100% - 240px); transition: 1s;}
 
 
 #page2{background-image: url('../src/page2bg.svg'); background-size: 100% auto;}
@@ -85,44 +107,82 @@ header .login, .signin{display: block; width: 80px; height: 80px; line-height: 8
 .searchbox .navybtn i{display: block; width: 100%; line-height: 50px; text-align: center;}
 
 .package-box{width: 90%; height: 60%; position: absolute; top: 30%; left: 5%;}
-.package-box .package-wrap{display: block; width: 100%; height: 100%; position: relative;}
+.package-box .package-detail{display: block; height: 7%; text-align: right; font-size: 1em; letter-spacing: 1px; font-weight: 500; font-style: italic;}
+.package-box .package-detail:hover{padding-right: 10px; text-decoration: underline;}
+.package-box .package-wrap{display: block; width: 100%; height: 93%; position: relative;}
 .package-box .package-wrap .package{display: block; width: 32%; height: 100%; margin-right: 2%; float: left; position: absolute; top: 0;}
 .package-box .package-wrap .package:first-child{left: 0;}
 .package-box .package-wrap .package:nth-child(2){left: 34%;}
 .package-box .package-wrap .package:last-child{margin-right: 0; left: 68%;}
 .package-box .package-wrap .package .package-inner{width: 100%; height: 100%; margin: 0 auto;}
-.package-box .package-wrap .package a{display: block; width: 90%; height: 70%; margin: 10px auto 0px; background-size: cover; background-position: center center; background-repeat: no-repeat; border-radius: 10px 10px 0 0;}
+.package-box .package-wrap .package a{display: block; width: 90%; height: 75%; margin: 0 auto; background-size: cover; background-position: center center; background-repeat: no-repeat; border-radius: 10px 10px 0 0;}
 
 .package-box .package-wrap .package .package-text{width: calc(90% - 20px); display: block; margin: 0 auto; font-size: 1rem; line-height: 1.5rem; text-align: center; background-color: #fff; border-radius: 0 0 10px 10px; padding: 25px 10px;}
 /*.package-box .package-wrap .package-back{width: 90%; width: 0; height: 90%; margin: 0 auto; transform: rotateY(180deg); opacity: 0;}
 .package-box .package-wrap .package-back .package-back-text{padding: 5%; text-align: center; font-size: 1rem; line-height: 1.5rem;}*/
 
-.package-box .package-wrap .package:hover{transform: rotateY(360deg); transition: 1s;}
+.package-box .package-wrap .package-inner:hover{transform: rotateY(360deg); transition: 1s;}
+
+
+
 
 #page3{background-image: url('../src/page3bg.svg'); background-size: 100% auto;}
 .review-box{width: 100%; height: 70%; position: relative;}
-.review-box .btn{width: 5%; height: 70px; position: absolute; left: 0; top: 42.5%;}
-.review-box .right{right: 0;}
-.review-card{width: 84%; height: 80%; margin: 0 auto; border-radius: 10px; box-sizing: border-box; border: 2px solid #fff; margin-top: 20px;}
-.review-image-cover{width: 65%; height: 100%; float: left; overflow: hidden; border-radius: 10px 0 0 10px;}
-.review-comment-cover{width: 35%; height: 100%; float: left; overflow: hidden; border-radius: 0 10px 10px 0; background-color: rgba(255,255,255,0.5);}
+/*.review-box .icon{width: 5%; height: 70px; position: absolute; left: 0; top: 42.5%;}*/
 
-.review-image-wrap, .review-comment-wrap{width: 400%; height: 100%;}
-.review-image, .review-comment{width: 25%; height: 100%; float: left;}
-.review-image{background-size: auto 100%; background-position: center center; }
+.icon {position: absolute; top: 55%; transform: translate(-50%,-50%); width: 80px; height: 60px; cursor: pointer;}
+.icon.right{right: -5%;}
+.icon.left{left: 1%;}
+.arrow {position: absolute; top: 25px; width: 90%; height: 10px; background-color: #244482; box-shadow: 0 3px 5px rgba(0, 0, 0, .2);}
+.arrow.right::after, .arrow.right::before {content: ''; position: absolute; width: 60%; height: 10px; right: -8px; background-color: #244482;}
+.arrow.left::after, .arrow.left::before {content: ''; position: absolute; width: 60%; height: 10px; right: 36px; background-color: #244482;}
+.arrow.right::after {top: -12px; transform: rotate(45deg);}
+.arrow.right::before {top: 12px; box-shadow: 0 3px 5px rgba(0, 0, 0, .2); transform: rotate(-45deg);}
+.arrow.left::after {top: -12px; transform: rotate(-45deg);}
+.arrow.left::before {top: 12px; box-shadow: 0 3px 5px rgba(0, 0, 0, .2); transform: rotate(45deg);}
+.arrow.active{animation-name: arrow; animation-duration: 0.7s; animation-iteration-count: infinite;}
+@keyframes arrow{
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 10%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.review-card{width: 84%; height: 80%; margin: 0 auto; border-radius: 10px; box-sizing: border-box; border: 2px solid #fff; margin-top: 20px;}
+.review-image-cover{width: 65%; height: 100%; float: left; overflow: hidden; border-radius: 10px 0 0 10px; position: relative;}
+.review-comment-cover{width: 35%; height: 100%; float: left; overflow: hidden; border-radius: 0 10px 10px 0; background-color: rgba(255,255,255,0.5); position: relative;}
+
+
+.review-image, .review-comment{width: 100%; height: 100%; float: left; position: absolute; top: 0; left: 0; display: none;}
+.review-image{background-size: 100% auto; background-position: center center; }
 
 .profile{width: 100%; height: 70px; padding-left: 5%; box-sizing: border-box; border-bottom: 2px solid #fff;}
 .profile-image{width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #fff; border-radius: 50px; margin-top: 10px; float: left; background-size: 100% auto; background-position: center center;}
 .profile-name{line-height: 70px; font-weight: 500; font-size: 1.6rem; text-indent: 15px;}
-.profile .comment{padding: 12px 15px; font-size: 1.2rem; line-height: 2rem;}
+.comment{padding: 12px 15px; font-size: 1.2rem; line-height: 2rem;}
 
 
 
 #page4{background-image: url('../src/page4bg_.jpg'); background-position: center center; background-size: 100% auto;}
 .process-wrap{width: 100%; height: 400px; position: absolute; top: 15%;}
-.process-box{width: 25%; height: 100%; float: left; position: relative;}
-.process{padding-top: 85%; font-size: 1.1rem; line-height: 1.8rem; text-align: right;  padding-right: 10px;}
-.process-2{display: none;}
+.process-inner{width: 100%; height: 100%; position: relative;}
+
+
+.process-box{width: 25%; height: 100%; float: left; position: absolute; top: 0; cursor: pointer;}
+.process-box-inner{width: 100%; height: 100%; position: relative;}
+.process-box-inner img{display: block; width: 100%; height: 100%; }
+
+.click-box{width: 100%; height: 100%; background-color: rgba(255,255,255,0.7); position: absolute; top: 0; left: 0; z-index: 20;}
+.click-comment{display: block; line-height: 400px; text-align: center; letter-spacing: 2px; font-size: 1.5rem; font-weight: 500;}
+
+
+.process{font-size: 1.1rem; line-height: 1.8rem; text-align: right; padding-right: 10px; position: absolute; bottom: 20px;}
+.process-2{width: calc(100% - 20px); text-align: right; font-size: 1.1rem; line-height: 1.8rem; position: absolute; bottom: 20px; display: none;}
 
 .process-box.active{width: 49%;}
 .process-box.side{width: 17%;}
@@ -151,11 +211,12 @@ header .login, .signin{display: block; width: 80px; height: 80px; line-height: 8
 footer{width: 100%; height: 250px; position: absolute; bottom: 0;}
 footer .footer-title-box{width: 100%; height: 60px;}
 footer .title{width: 50%; float: left; line-height: 60px;}
-footer .btn{width: 25%; margin: 0 5%; float: right;}
+/*footer .btn{width: 25%; margin: 0 5%; float: right;}
 
 footer .btn {background-color: #fff; overflow: hidden; display:inline-block; color:transparent; font-size: 1.1em;}
-footer .btn span {background: url('../src/page4bg_.jpg') 400px 400px repeat; -webkit-text-fill-color: transparent; -webkit-background-clip: text; display:block; font-weight: 600;}
+footer .btn span {background: url('../src/page4bg_.jpg') 400px 400px repeat; -webkit-text-fill-color: transparent; -webkit-background-clip: text; display:block; font-weight: 600;}*/
 
+footer .btn{float: right; margin: 0 50px 0 0;}
 
 footer .fnb-wrap{width: 100%; height: 150px; margin-top: 20px;}
 footer .fnb-wrap ul{display: block; width: 25%; height: 100%; float: left;}
