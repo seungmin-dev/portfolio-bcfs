@@ -53,6 +53,25 @@ header .search{display: block; float: left; line-height: 80px; color: #fff; widt
 header .search i{display: block; text-align: center; line-height: 80px; color: #fff; width: 100%; height: 100%;}
 header .login, .signin{display: block; width: 80px; height: 80px; line-height: 80px; text-align: center; font-size: 1rem; text-align: center;}
 
+.mo-gnb{width: 80px; height: 80px; float: right; display: none;}
+.mo-gnb img{display: block; width: 50px; height: 50px; margin: 15px 0 0 15px;}
+
+.mo-gnb-page-wrap{width: 100%; height: 100%; position: fixed; top: -100%; z-index: 150; left: 0; display: none;}
+.mo-gnb-page{width: 100%; height: 100%; position: relative;}
+
+.door-box{width: 50%; height: 100%; position: absolute; top: 0; background-color: #ade4ff; opacity: 0; box-sizing: border-box;}
+.door-box.left{left: -50%; border-right: 1px solid #d5e1e8;}
+.door-box.right{right: -50%; border-right: 1px solid #d5e1e8;}
+.menu-box{width: 100%; height: 100%; position: absolute; top: 30px; left: 0; z-index: 10; opacity: 0;}
+.menu-box-logo{display: block; width: 140px; height: 60px; margin: 20% auto 8%;}
+.menu-box .searchbox{position: static; margin: 0 auto;}
+.menu-box ul{display: block; width: 50%; height: 250px; margin: 7% auto 5%;}
+.menu-box ul li{display: block; width: 100%; height: 50px; float: left;}
+.menu-box ul li a{display: block; text-align: center; line-height: 50px; width: 100%; height: 50px; color: #fff; font-size: 1.1rem;  }
+.mo-gnb-page-close{width: 50px; height: 50px; margin: 0 auto;}
+.mo-gnb-page-close img{display: block; width: 50px; height: 50px;}
+
+
 
 
 
